@@ -127,10 +127,77 @@
 					
 					<div class="tab-content default-tab">
 					
-						<h4>Subheading</h4>
-						<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in porta lectus. Maecenas dignissim enim quis ipsum mattis aliquet. Maecenas id velit et elit gravida bibendum. Duis nec rutrum lorem. Donec egestas metus a risus euismod ultricies. Maecenas lacinia orci at neque commodo commodo.
-						</p>
+						<h4>Management of the Central Repository</h1>
+          	<p>
+            The management system of CALJAX implements several common repository management tasks such as adding items to the repository, browsing and searching through the repository as well as removing and editing items already in the repository. It also supports various standards of metadata and provides an extension system for supporting new metadata formats.
+          	</p>
+          	<p>
+            The management system features a Web interface and communicates with the offline collections through a standard HTTP 1.1 protocol, using AJAX technologies.
+          	</p>
+
+          	<h4>Aims</h4>
+          	<p>
+        		The management system is designed to be able to:
+        		<ul>
+          		<li>support common repository management functions</li>
+          		<li>support various metadata standards and allow the support of new formats of metadata through an extension system</li>
+          		<li>provide lists of updated items to the offline copies of the collections</li>
+          		<li>provide a Web interface with good usability</li>
+          		<li>support all major Web browsers</li>
+          		<li>scale to large collections</li>
+          	</ul>
+          	</p>
+
+          	<h4>Design</h4>
+          	<p>
+          	There were several design challenges in designing the CALJAX management system. This included allowing the support of various types of metadata. This was achieved through the use of XML Schema-based editors that use XML Schema definitions of metadata standards to produce generalised editors for the metadata. Also, an extension system was designed so that plug-ins could be written for providing customs editors for the different metadata types.
+          	</p>
+          	<p>
+      	    Another challenge included providing key functions to both a Web interface and the offline copies of the system. This was achieved through the use of XSLT and XML. The central server functions return XML formatted lists which can be directly processed by AJAX technologies on the offline copies but can also be rendered in Web browsers as part of the Web interface through XSLT transformations.
+          	</p>
+
+          	<h4>Management System Overview</h4>
+          	<p>
+        		The management system consists of:
+        		<ul>
+          		<li>a set of core functions that can be called through an HTTP 1.1 protocol</li>
+          		<li>a Web interface that makes use of these core functions</li>
+          		<li>configuration files for the different metadata types supported by the system</li>
+          		<li>repository data and metadata in defined structure on file system</li>
+          	</ul>	
+          	</p>
+          	
+          	<p>
+            <img src="resources/images/management_overview.png" alt="Management System Overview Image" />
+            </p>
+          	
+          	<h4>Conclusions</h4>
+          	<p>
+        		The management system was evaluated and its effectiveness was analysed. The following conclusions were made:
+        		<ul>
+          		<li>The system implemented the common management functions expected of a repository management system</li>
+          		<li>The system scaled up to a collection of over 15,000 items</li>
+
+          		<li>The Web interface for management had good usability</li>
+          		<li>The system had a reasonable response time for search queries</li>
+          		<li>The Web interface was compatible with all major browsers</li>
+          	</ul>
+          	</p>
+          	
+          	<h4>Future Work</h4>
+          	<p>
+        		More work could be carried out in the following areas to improve the system:
+        		<ul>
+          		<li>Further scalability testing</li>
+          		<li>More sophisticated searching and browsing functions</li>
+          		<li>Support for large lists of updates</li>
+          		<li>Full use of all aspects of the XML Schema specification</li>
+          	</ul>
+          	</p>
+
+        		<p>
+          		For more in depth information, refer to the <a href="report.sbrsur002.pdf">full report</a>.
+          	</p>
 						
 					</div>
 					
