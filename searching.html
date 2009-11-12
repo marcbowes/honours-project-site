@@ -132,16 +132,16 @@
             Searching the Digital Repository requires that preprocessing be done in order to quickly perform queries. The preprocessor needs to build inverted files: mapping words to the documents in which they appear. These indices are then used by AJAX code in the Web browser to perform a search.
 						</p>
 						
-						<h4>Design and implementation</h4>
+						<h4>Design and Implementation</h4>
 						<div class="column-left">
 						<p>
 						The preprocessor was implemented in Java. It loads data/metadata pairs and generates inverted indices. The XML-formatted metadata is parsed using the Document Object Model (DOM) parser for Java. A word list is then extracted from each metadata file and certain transformations are applied to the list. For example, a word such <em>retrieve</em> or <em>retrieving</em> is shortened to <em>retriev</em>: this is known as stemming and is the third of five transformations applied.
 						</p>
 						<p>
-						These transformed lists are used to build inverted indices - each index accumulates document pointers as metadata is processed. The nature of this process requires many lookup operations. This is faciliated by a nested series of hash tables. These hashes allow the program to lookup a specific index in constant time. This yields excellent performance, as index-lookup is the most used operation in the preprocessor.
+						These transformed lists are used to build inverted indices - each index accumulates document pointers as metadata is processed. The nature of this process requires many lookup operations. This is facilitated by a nested series of hash tables. These hashes allow the program to lookup a specific index in constant time. This yields excellent performance, as index-lookup is the most used operation in the preprocessor.
 						</p>
 						<p>
-						Inverted indices are placed in a <code>indices/</code> folder in the <code>site/</code> folder. Exporting <code>site/</code> (e.g. to DVD-ROM) will result in a self-contained, completely functional version of the collection. <code>search.html</code> uses AJAX to load these indices in response to a user-entered query. The JavaScript behind this page users the <a href="http://jquery.com">jQuery</a> library to apply functionality to the page. The code is responsible for applying the same transformations as the preprocessor in order to determine which indices are to be loaded. Once loaded, these indices are used to generate results which are then ranked and displayed (10 per page) to the user. Finally, the results have descriptions added to them by querying the metadata.
+						Inverted indices are placed in a <code>indices/</code> folder in the <code>site/</code> folder. Exporting <code>site/</code> (e.g. to DVD-ROM) will result in a self-contained, completely functional version of the collection. <code>search.html</code> uses AJAX to load these indices in response to a user-entered query. The JavaScript behind this page user the <a href="http://jquery.com">jQuery</a> library to apply functionality to the page. The code is responsible for applying the same transformations as the preprocessor in order to determine which indices are to be loaded. Once loaded, these indices are used to generate results which are then ranked and displayed (10 per page) to the user. Finally, the results have descriptions added to them by querying the metadata.
 						</p>
 						</div>
 						<div id="images" class="column-right">
@@ -151,12 +151,12 @@
 						
 						<div class="clear"></div>
 						
-						<h4>Results and findings</h4>
+						<h4>Results and Findings</h4>
 						<p>
 						The system was seeded with data from the Bleek and Lloyd collection and then exported to DVD-ROM. Performance and compatibility, information retrieval and user evaluations were conducted to determine the success of the project (methodology available <a href="resources/files/report.bwsmar002.pdf">the report</a>).
 						</p>
 						<p>				
-						CALJAX was compliant with Web browsers on all three major operating systems (Windows, Linux and OSX). Internet Explorer yield very poor performance, but Firefox and Safari gave consistently good results even with "large" queries (where "large" means that a lot of data was processed - e.g. many terms or terms with big indices). Performance was hindered more (on average) by the DVD-ROM than by the performance of JavaScript.
+						CALJAX was compliant with Web browsers on all three major operating systems (Windows, Linux and OSX). Internet Explorer yielded very poor performance, but Firefox and Safari gave consistently good results even with "large" queries (where "large" means that a lot of data was processed - e.g. many terms or terms with big indices). Performance was hindered more (on average) by the DVD-ROM than by the performance of JavaScript.
 						</p>
 						<p>
 						The system has 100% recall, which means it is good at dealing with simple queries which scope results to certain words or metadata fields. However, adding additional terms widens the scope, instead of narrowing it. This is because the retrieval algorithm joins results with the OR operator. While this means being more specific yields more results, the ranking algorithm does a good job at ensuring precision across the initial results.
@@ -165,13 +165,16 @@
 						CALJAX searching was designed to return good results in a reasonable time. The users felt that the searching was fast enough and were able to find the example stories mentioned in the tasks. They felt the system was intuitive and were not bewildered by any aspects.
 						</p>
 						
-						<h4>Conclusions and future work</h4>
+						<h4>Conclusions and Future Work</h4>
 						<p>
 						A preprocessor is used to generate inverted indices which are then used by an HTML page powered by AJAX technology. These indices are used to quickly generate results and display them to the user. The collection can be written to a DVD (or any distributable media) and requires no software to be installed in order to work.
 						</p>
 						<p>
 						The evaluation of the system has provided positive feedback. The system is successful in that most foreseen obstacles have been overcome. Some work is outstanding which would improve the quality and speed of the results.
 						</p>
+                                                <p>
+                                                Future work could improve the quality and speed of the searching, especially when dealing with large files. The current implementation of online integration is very simplistic (due to time constraints) and could be significantly improved. While the original goal was to determine whether search-features could be implemented in AJAX, future work would focus on determining what features are possible given the limits of JavaScript.
+                                                </p>
 						
 					</div>
 					

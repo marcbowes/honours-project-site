@@ -1,174 +1,174 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
- 
-	<head>
-		
-		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		
-		<title>CALJAX Honours Project</title>
-		
-		<!--                       CSS                       -->
-	  
-		<!-- Reset Stylesheet -->
-		<link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
-	  
-		<!-- Main Stylesheet -->
-		<link rel="stylesheet" href="resources/css/style.css" type="text/css" media="screen" />
-		
-		<!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
-		<link rel="stylesheet" href="resources/css/invalid.css" type="text/css" media="screen" />	
-		
-		<!-- Internet Explorer Fixes Stylesheet -->
-		
-		<!--[if lte IE 7]>
-			<link rel="stylesheet" href="resources/css/ie.css" type="text/css" media="screen" />
-		<![endif]-->
-		
-		<!--                       Javascripts                       -->
-  
-		<!-- jQuery -->
-		<script type="text/javascript" src="resources/scripts/jquery-1.3.2.min.js"></script>
-		
-		<!-- jQuery Configuration -->
-		<script type="text/javascript" src="resources/scripts/simpla.jquery.configuration.js"></script>
-		
-		<!-- Facebox jQuery Plugin -->
-		<script type="text/javascript" src="resources/scripts/facebox.js"></script>
-		
-		<!-- Internet Explorer .png-fix -->
-		
-		<!--[if IE 6]>
-			<script type="text/javascript" src="resources/scripts/DD_belatedPNG_0.0.7a.js"></script>
-			<script type="text/javascript">
-				DD_belatedPNG.fix('.png_bg, img, li');
-			</script>
-		<![endif]-->
-		
-	</head>
-  
-	<body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
-		
-		<div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
-			
-			<h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
-		  
-			<!-- Logo (221px wide) -->
-			<a href="#"><img id="logo" src="resources/images/logo.png" alt="Logo" /></a> 
-			
-			<ul id="main-nav">  <!-- Accordion Menu -->
-				
-				<li> 
-					<a href="#" class="nav-top-item">
-  					Overview
-					</a>
-					<ul>
-						<li><a href="index.html">Introduction</a></li>
-						<li><a href="members.html">Team members</a></li>
-						<li><a href="downloads.html">Downloads</a></li>
-					</ul>
-				</li>
-				
-				<li>
-					<a href="#" class="nav-top-item">
-						Background
-					</a>
-					<ul>
-						<li><a href="digital-repositories.html">Digital Repositories</a></li>
-						<li><a href="ajax.html">AJAX</a></li>
-					</ul>
-				</li>
-				
-				<li>
-					<a href="browsing.html" class="nav-top-item no-submenu">
-						Browsing
-					</a>
-				</li>
-				
-				<li>
-					<a href="searching.html" class="nav-top-item no-submenu">
-						Searching
-					</a>
-				</li>
-				
-				<li>
-					<a href="#" class="nav-top-item no-submenu current">
-						Management
-					</a>
-				</li>
-				
-			</ul> <!-- End #main-nav -->
-			
-		</div></div> <!-- End #sidebar -->
-		
-		<div id="main-content"> <!-- Main Content Section with everything -->
-			
-			<noscript> <!-- Show a notification if the user has disabled javascript -->
-				<div class="notification error png_bg">
-					<div>
-						Javascript is disabled or is not supported by your browser. Please <a href="http://browsehappy.com/" title="Upgrade to a better browser">upgrade</a> your browser or <a href="http://www.google.com/support/bin/answer.py?answer=23852" title="Enable Javascript in your browser">enable</a> Javascript to navigate the interface properly.
-					</div>
-				</div>
-			</noscript>
-			
-			<!-- Page Head -->
-			<h2>CALJAX components</h2>
-			
-			<div class="content-box">
-				
-				<div class="content-box-header">
-					
-					<h3>Management</h3>
-					
-				</div> <!-- End .content-box-header -->
-				
-				<div class="content-box-content">
-					
-					<div class="tab-content default-tab">
-					
-						<h4>Management of the Central Repository</h1>
-          	<p>
-            The management system of CALJAX implements several common repository management tasks such as adding items to the repository, browsing and searching through the repository as well as removing and editing items already in the repository. It also supports various standards of metadata and provides an extension system for supporting new metadata formats.
-          	</p>
-          	<p>
-            The management system features a Web interface and communicates with the offline collections through a standard HTTP 1.1 protocol, using AJAX technologies.
-          	</p>
+ <html xmlns="http://www.w3.org/1999/xhtml">
 
-          	<h4>Aims</h4>
-          	<p>
-        		The management system is designed to be able to:
-        		<ul>
-          		<li>support common repository management functions</li>
-          		<li>support various metadata standards and allow the support of new formats of metadata through an extension system</li>
-          		<li>provide lists of updated items to the offline copies of the collections</li>
-          		<li>provide a Web interface with good usability</li>
-          		<li>support all major Web browsers</li>
-          		<li>scale to large collections</li>
-          	</ul>
-          	</p>
+         <head>
 
-          	<h4>Design</h4>
-          	<p>
-          	There were several design challenges in designing the CALJAX management system. This included allowing the support of various types of metadata. This was achieved through the use of XML Schema-based editors that use XML Schema definitions of metadata standards to produce generalised editors for the metadata. Also, an extension system was designed so that plug-ins could be written for providing customs editors for the different metadata types.
-          	</p>
-          	<p>
-      	    Another challenge included providing key functions to both a Web interface and the offline copies of the system. This was achieved through the use of XSLT and XML. The central server functions return XML formatted lists which can be directly processed by AJAX technologies on the offline copies but can also be rendered in Web browsers as part of the Web interface through XSLT transformations.
-          	</p>
+                 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
-          	<h4>Management System Overview</h4>
-          	<p>
-        		The management system consists of:
-        		<ul>
-          		<li>a set of core functions that can be called through an HTTP 1.1 protocol</li>
-          		<li>a Web interface that makes use of these core functions</li>
-          		<li>configuration files for the different metadata types supported by the system</li>
-          		<li>repository data and metadata in defined structure on file system</li>
-          	</ul>	
+                 <title>CALJAX Honours Project</title>
+
+                 <!--                       CSS                       -->
+
+                 <!-- Reset Stylesheet -->
+                 <link rel="stylesheet" href="resources/css/reset.css" type="text/css" media="screen" />
+
+                 <!-- Main Stylesheet -->
+                 <link rel="stylesheet" href="resources/css/style.css" type="text/css" media="screen" />
+
+                 <!-- Invalid Stylesheet. This makes stuff look pretty. Remove it if you want the CSS completely valid -->
+                 <link rel="stylesheet" href="resources/css/invalid.css" type="text/css" media="screen" />	
+
+                 <!-- Internet Explorer Fixes Stylesheet -->
+
+                 <!--[if lte IE 7]>
+                         <link rel="stylesheet" href="resources/css/ie.css" type="text/css" media="screen" />
+                 <![endif]-->
+
+                 <!--                       Javascripts                       -->
+
+                 <!-- jQuery -->
+                 <script type="text/javascript" src="resources/scripts/jquery-1.3.2.min.js"></script>
+
+                 <!-- jQuery Configuration -->
+                 <script type="text/javascript" src="resources/scripts/simpla.jquery.configuration.js"></script>
+
+                 <!-- Facebox jQuery Plugin -->
+                 <script type="text/javascript" src="resources/scripts/facebox.js"></script>
+
+                 <!-- Internet Explorer .png-fix -->
+
+                 <!--[if IE 6]>
+                         <script type="text/javascript" src="resources/scripts/DD_belatedPNG_0.0.7a.js"></script>
+                         <script type="text/javascript">
+                                 DD_belatedPNG.fix('.png_bg, img, li');
+                         </script>
+                 <![endif]-->
+
+         </head>
+
+         <body><div id="body-wrapper"> <!-- Wrapper for the radial gradient background -->
+
+                 <div id="sidebar"><div id="sidebar-wrapper"> <!-- Sidebar with logo and menu -->
+
+                         <h1 id="sidebar-title"><a href="#">Simpla Admin</a></h1>
+
+                         <!-- Logo (221px wide) -->
+                         <a href="#"><img id="logo" src="resources/images/logo.png" alt="Logo" /></a> 
+
+                         <ul id="main-nav">  <!-- Accordion Menu -->
+
+                                 <li> 
+                                         <a href="#" class="nav-top-item">
+                                         Overview
+                                         </a>
+                                         <ul>
+                                                 <li><a href="index.html">Introduction</a></li>
+                                                 <li><a href="members.html">Team members</a></li>
+                                                 <li><a href="downloads.html">Downloads</a></li>
+                                         </ul>
+                                 </li>
+
+                                 <li>
+                                         <a href="#" class="nav-top-item">
+                                                 Background
+                                         </a>
+                                         <ul>
+                                                 <li><a href="digital-repositories.html">Digital Repositories</a></li>
+                                                 <li><a href="ajax.html">AJAX</a></li>
+                                         </ul>
+                                 </li>
+
+                                 <li>
+                                         <a href="browsing.html" class="nav-top-item no-submenu">
+                                                 Browsing
+                                         </a>
+                                 </li>
+
+                                 <li>
+                                         <a href="searching.html" class="nav-top-item no-submenu">
+                                                 Searching
+                                         </a>
+                                 </li>
+
+                                 <li>
+                                         <a href="#" class="nav-top-item no-submenu current">
+                                                 Management
+                                         </a>
+                                 </li>
+
+                         </ul> <!-- End #main-nav -->
+
+                 </div></div> <!-- End #sidebar -->
+
+                 <div id="main-content"> <!-- Main Content Section with everything -->
+
+                         <noscript> <!-- Show a notification if the user has disabled javascript -->
+                                 <div class="notification error png_bg">
+                                         <div>
+                                                 Javascript is disabled or is not supported by your browser. Please <a href="http://browsehappy.com/" title="Upgrade to a better browser">upgrade</a> your browser or <a href="http://www.google.com/support/bin/answer.py?answer=23852" title="Enable Javascript in your browser">enable</a> Javascript to navigate the interface properly.
+                                         </div>
+                                 </div>
+                         </noscript>
+
+                         <!-- Page Head -->
+                         <h2>CALJAX components</h2>
+
+                         <div class="content-box">
+
+                                 <div class="content-box-header">
+
+                                         <h3>Management</h3>
+
+                                 </div> <!-- End .content-box-header -->
+
+                                 <div class="content-box-content">
+
+                                         <div class="tab-content default-tab">
+
+                                                 <h4>Management of the Central Repository</h1>
+                 <p>
+             The management system of CALJAX implements several common repository management tasks such as adding items to the repository, browsing and searching through the repository as well as removing and editing items already in the repository. It also supports various standards of metadata and provides an extension system for supporting new metadata formats.
+                 </p>
+                 <p>
+             The management system features a Web interface and communicates with the offline collections through a standard HTTP 1.1 protocol, using AJAX technologies.
+                 </p>
+
+                 <h4>Aims</h4>
+                 <p>
+                         The management system is designed to be able to:
+                         <ul>
+                         <li>support common repository management functions</li>
+                         <li>support various metadata standards and allow the support of new formats of metadata through an extension system</li>
+                         <li>provide lists of updated items to the offline copies of the collections</li>
+                         <li>provide a Web interface with good usability</li>
+                         <li>support all major Web browsers</li>
+                         <li>scale to large collections</li>
+                 </ul>
+                 </p>
+
+                 <h4>Design</h4>
+                 <p>
+                 There were several design challenges in designing the CALJAX management system. This included allowing the support of various types of metadata. This was achieved through the use of XML Schema-based editors that use XML Schema definitions of metadata standards to produce generalised editors for the metadata. Also, an extension system was designed so that plug-ins could be written for providing customs editors for the different metadata types.
+                 </p>
+                 <p>
+             Another challenge included providing key functions to both a Web interface and the offline copies of the system. This was achieved through the use of XSLT and XML. The central server functions return XML formatted lists which can be directly processed by AJAX technologies on the offline copies but can also be rendered in Web browsers as part of the Web interface through XSLT transformations.
+                 </p>
+
+                 <h5>Management System Overview</h5>
+                 <p>
+                         The management system consists of:
+                         <ul>
+                         <li>a set of core functions that can be called through an HTTP 1.1 protocol</li>
+                         <li>a Web interface that makes use of these core functions</li>
+                         <li>configuration files for the different metadata types supported by the system</li>
+                         <li>repository data and metadata in defined structure on file system</li>
+                 </ul>
           	</p>
           	
           	<p>
-            <img src="resources/images/management_overview.png" alt="Management System Overview Image" />
+            <img src="resources/images/management_overview.png" alt="Management System Overview Image" width="556" height="266"/>
             </p>
           	
           	<h4>Conclusions</h4>
@@ -184,7 +184,7 @@
           	</ul>
           	</p>
           	
-          	<h4>Future Work</h4>
+          	<h5>Future Work</h5>
           	<p>
         		More work could be carried out in the following areas to improve the system:
         		<ul>
