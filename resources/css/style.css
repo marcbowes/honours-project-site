@@ -806,3 +806,13 @@ div#images img {
   vertical-align: top;
   border: 1px solid gray;
 }
+
+dt {
+  display: inline-block;
+}
+
+dd {
+  display: inline-block;
+  line-height: 48px;
+  vertical-align: top;
+}
